@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane style="-fx-background-color: linear-gradient(to bottom right, #1565C0, #1E88E5, #42A5F5);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProjekAstra.Controller.Login.LoginKaryawan">
+
+    <VBox alignment="CENTER" maxWidth="420" spacing="20">
+
+        <VBox alignment="CENTER" prefWidth="400" spacing="20" style="-fx-background-color: white; -fx-background-radius: 16;">
+            <padding><Insets bottom="30" left="35" right="35" top="30" /></padding>
+
+            <Label text="VillaNesia" textFill="#1565C0">
+                <font><Font name="System Bold" size="28" /></font>
+            </Label>
+            <Label text="Akun Karyawan" textFill="#616161" />
+
+            <!-- Toggle Tab -->
+            <HBox prefHeight="40" spacing="0" style="-fx-background-color: #F1F5F9; -fx-background-radius: 8;">
+                <Button fx:id="tabLogin" onAction="#showLogin" prefWidth="190" style="-fx-background-color: #1565C0; -fx-text-fill: white; -fx-background-radius: 8;" text="Masuk" />
+                <Button fx:id="tabRegister" onAction="#showRegister" prefWidth="190" style="-fx-background-color: transparent; -fx-text-fill: #616161;" text="Daftar" />
+            </HBox>
+
+            <!-- LOGIN PANE -->
+            <VBox fx:id="paneLogin" spacing="12">
+                <TextField fx:id="loginUsername" promptText="Username" />
+                <PasswordField fx:id="loginPassword" promptText="Password" />
+                <HBox spacing="10">
+                    <Button onAction="#handleKembali" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: #E3F2FD; -fx-text-fill: #1565C0; -fx-font-weight: bold;" text="← Kembali" />
+                    <Button onAction="#handleLogin" prefHeight="26.0" HBox.hgrow="ALWAYS" maxWidth="Infinity" style="-fx-background-color: #1565C0; -fx-text-fill: white; -fx-font-weight: bold;" text="Masuk" />
+                </HBox>
+            </VBox>
+
+            <!-- REGISTER PANE -->
+            <VBox fx:id="paneRegister" managed="false" spacing="12" visible="false">
+                <TextField fx:id="regNama" promptText="Nama Lengkap" />
+                <TextField fx:id="regNoTelp" promptText="No. Telp" />
+                <TextField fx:id="regAlamat" promptText="Alamat" />
+                <TextField fx:id="regUmur" promptText="Umur" />
+                <DatePicker fx:id="regTglMasuk" prefWidth="330" promptText="Tanggal Masuk" />
+                <ComboBox fx:id="regStatus" prefWidth="330" promptText="Status" />
+                <TextField fx:id="regUsername" promptText="Username" />
+                <PasswordField fx:id="regPassword" promptText="Password" />
+                <Button onAction="#handleRegister" prefWidth="330" style="-fx-background-color: #1565C0; -fx-text-fill: white; -fx-font-weight: bold;" text="Daftar" />
+            </VBox>
+
+        </VBox>
+    </VBox>
+</StackPane>

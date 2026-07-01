@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ProjekAstra.Controller.Master.CrudPemilik">
+
+    <center>
+        <HBox spacing="15">
+            <padding><Insets top="0" bottom="15" left="0" right="0"/></padding>
+
+            <VBox spacing="12" prefWidth="280" style="-fx-background-color: white; -fx-background-radius: 12;">
+                <padding><Insets top="20" bottom="20" left="20" right="20"/></padding>
+
+                <Label text="Form Pemilik">
+                    <font><Font name="System Bold" size="15"/></font>
+                </Label>
+
+                <TextField fx:id="txtId" promptText="ID Pemilik" editable="false" style="-fx-background-color: #F1F5F9;"/>
+                <TextField fx:id="txtNama" promptText="Nama Lengkap"/>
+                <TextField fx:id="txtNoTelp" promptText="No. HP"/>
+                <TextField fx:id="txtEmail" promptText="Email"/>
+                <TextField fx:id="txtAlamat" promptText="Alamat"/>
+                <TextField fx:id="txtUsername" promptText="Username"/>
+                <PasswordField fx:id="txtPassword" promptText="Password"/>
+
+                <Region VBox.vgrow="ALWAYS"/>
+                <TextField fx:id="txtCari" promptText="Cari pemilik..."/>
+            </VBox>
+
+            <VBox HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-background-radius: 12;">
+                <padding><Insets top="15" bottom="15" left="15" right="15"/></padding>
+
+                <TableView fx:id="tablePemilik" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colId" text="ID Pemilik" prefWidth="90"/>
+                        <TableColumn fx:id="colNama" text="Nama" prefWidth="150"/>
+                        <TableColumn fx:id="colNoTelp" text="No. HP" prefWidth="120"/>
+                        <TableColumn fx:id="colEmail" text="Email" prefWidth="180"/>
+                        <TableColumn fx:id="colAlamat" text="Alamat" prefWidth="160"/>
+                        <TableColumn fx:id="colUsername" text="Username" prefWidth="110"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </HBox>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-background-radius: 12;">
+            <padding><Insets top="15" bottom="15" left="20" right="20"/></padding>
+
+            <Button fx:id="btnSimpan" text="Simpan" onAction="#handleSimpan"
+                    style="-fx-background-color: #1565C0; -fx-text-fill: white; -fx-font-weight: bold;" prefWidth="100"/>
+            <Button fx:id="btnUbah" text="Ubah" onAction="#handleUbah"
+                    style="-fx-background-color: #FB8C00; -fx-text-fill: white; -fx-font-weight: bold;" prefWidth="100"/>
+            <Button fx:id="btnHapus" text="Hapus" onAction="#handleHapus"
+                    style="-fx-background-color: #E53935; -fx-text-fill: white; -fx-font-weight: bold;" prefWidth="100"/>
+            <Button text="Reset" onAction="#handleReset"
+                    style="-fx-background-color: #ECEFF1; -fx-text-fill: #424242; -fx-font-weight: bold;" prefWidth="100"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
